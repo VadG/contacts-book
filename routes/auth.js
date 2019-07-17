@@ -19,7 +19,6 @@ router.get('/', auth, async (req, res) => {
     console.log(err);
     res.status(500).send('Server error');
   }
-  res.send('Get logged in user');
 });
 
 // @route     POST api/auth
