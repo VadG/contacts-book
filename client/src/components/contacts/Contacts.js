@@ -8,6 +8,12 @@ const Contacts = () => {
   const contactContext = useContext(ContactContext);
   const { contacts, filtered, getContacts, loading } = contactContext;
   const visibleContacts = !!filtered ? filtered : contacts;
+
+  useEffect(() => {
+    getContacts();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <Fragment>
       <TransitionGroup>

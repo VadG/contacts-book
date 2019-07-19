@@ -13,6 +13,9 @@ import {
 
 const contactReducer = (state, action) => {
   switch (action.type) {
+    case GET_CONTACTS:
+    return {...state,contacts:action.payload}
+    break;
     case ADD_CONTACT:
       return { ...state, contacts: [...state.contacts, action.payload] };
       break;
