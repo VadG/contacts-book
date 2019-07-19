@@ -10,15 +10,10 @@ app.use(express.json({ extended: false }));
 // Connect Database
 connectDB();
 
-app.get('/', (req, res) =>
-  res.json({ msg: 'Welcome to the Contacts Book API...' })
-);
-
 // Define Routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/contacts', require('./routes/contacts'));
-
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
